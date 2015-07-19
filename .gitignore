@@ -1,3 +1,7 @@
+# archivos y carpetas que tiene que ignorar git del proyecto
+node_modules
+npm-debug.log
+
 # Windows image file caches
 Thumbs.db
 ehthumbs.db
