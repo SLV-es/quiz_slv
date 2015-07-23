@@ -1,6 +1,9 @@
 # archivos y carpetas que tiene que ignorar git del proyecto
 node_modules
 npm-debug.log
+quiz.sqlite
+dbs/quiz.sqlite
+.env
 
 # Windows image file caches
 Thumbs.db
