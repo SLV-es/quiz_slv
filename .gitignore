@@ -2,7 +2,6 @@
 node_modules
 npm-debug.log
 quiz.sqlite
-dbs/quiz.sqlite
 .env
 
 # Windows image file caches
