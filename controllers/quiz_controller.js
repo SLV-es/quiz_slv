@@ -14,11 +14,21 @@ exports.load = function(req, res, next, quizId) {
 
 // GET /quizes
 exports.index = function(req, res) {
-	models.Quiz.findAll().then(
-	function(quizes) {
-		res.render('quizes/index',{quizes: quizes});
+	if (req.query.search) {
+		var search = "%" + req.query.search + "%";
+		search = search.replace(" ","%");
+		models.Quiz.findAll({where: ["pregunta like ?", search]}).then(
+		function(quizes) {
+			res.render('quizes/index',{quizes: quizes});
+		}
+		).catch(function(error) { next(error);})	
+	} else {
+		models.Quiz.findAll().then(
+		function(quizes) {
+			res.render('quizes/index',{quizes: quizes});
+		}
+		).catch(function(error) { next(error);})
 	}
-	).catch(function(error) { next(error);})
 };
 
 // GET /quizes/:id
@@ -33,4 +43,14 @@ exports.answer = function(req, res) {
 		resultado = 'Correcto';
 	}
 	res.render('quizes/answer', {quiz: req.quiz, respuesta: resultado});
+};
+
+// GET /quizes/search
+exports.search = function(req, res) {
+	res.render('quizes/search');
+};
+
+// GET /author
+exports.author = function(req, res) {
+	res.render('credits/author', {autor: 'SLV-es'});
 };

@@ -2,7 +2,6 @@
 var router = express.Router();
 
 var quizController = require('../controllers/quiz_controller');
-var quizCreditos = require('../creditos/quiz_creditos');
 
 // Página de entrada (home page)
 router.get('/', function(req, res) {
@@ -16,8 +15,7 @@ router.param('quizId', quizController.load);  // autoload :quizId
 router.get('/quizes',                      quizController.index);
 router.get('/quizes/:quizId(\\d+)',        quizController.show);
 router.get('/quizes/:quizId(\\d+)/answer', quizController.answer);
-
-// Definición de rutas de /creditos
-router.get('/creditos/credito', quizCreditos.credito);
+router.get('/quizes/search',               quizController.search);
+router.get('/author',                      quizController.author);
 
 module.exports = router;
