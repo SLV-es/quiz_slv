@@ -10,6 +10,9 @@ router.get('/', function(req, res, next) {
   res.render('index', { title: 'Quiz-SLV' });
 });
 
+// Autoload de comandos con :quizId
+router.param('quizId', quizController.load);  // autoload :quizId
+
 // Definición de rutas de /quizes
 router.get('/quizes',                quizController.index);
 router.get('/quizes/:quizId',        quizController.show);
