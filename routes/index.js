@@ -4,9 +4,8 @@ var router = express.Router();
 var quizController = require('../controllers/quiz_controller');
 var quizCreditos = require('../creditos/quiz_creditos');
 
-/* GET home page. */
 // Página de entrada (home page)
-router.get('/', function(req, res, next) {
+router.get('/', function(req, res) {
   res.render('index', { title: 'Quiz-SLV' });
 });
 
@@ -14,9 +13,9 @@ router.get('/', function(req, res, next) {
 router.param('quizId', quizController.load);  // autoload :quizId
 
 // Definición de rutas de /quizes
-router.get('/quizes',                quizController.index);
-router.get('/quizes/:quizId',        quizController.show);
-router.get('/quizes/:quizId/answer', quizController.answer);
+router.get('/quizes',                      quizController.index);
+router.get('/quizes/:quizId(\\d+)',        quizController.show);
+router.get('/quizes/:quizId(\\d+)/answer', quizController.answer);
 
 // Definición de rutas de /creditos
 router.get('/creditos/credito', quizCreditos.credito);
