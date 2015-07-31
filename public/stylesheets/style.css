@@ -3,8 +3,16 @@ body {font: 16px "Lucida Grande", Helvetica, Arial, sans-serif; }
 
 #page-wrap {margin: 2% auto; color: white;}
 #page-wrap > .main {border: 1px solid #999; padding: 1%; margin-bottom: 1px; color:black; }
+#s1 * {margin-bottom:6px;}
 
 section > div {padding: 20px;}
 header, nav, section, footer {background: #eee; text-align:center;}
 nav span {margin: 0px 10px 0px 0px;}
 a {color: #00B7FF;}
+
+#ErrorMsgs {color: #8B0000; font-size: smaller; background-color: LightYellow; border: 4px solid #fafafa; padding:15px; text-align: left;}
+h1 {font-size:200%}
+h2 {font-size:180%}
+h3 {font-size:160%}
+h4 {font-size:140%}
+h5 {font-size:120%}
