@@ -1,2 +1,4 @@
-﻿<p>Su respuesta: <%= respuesta %></p>
-<p><a href="/quizes/<%= quiz.id %>">Volver</a></p>
+﻿<form method="get" action="/quizes/<%= quiz.id %>">
+	<p>Su respuesta: <%= respuesta %></p>
+	<input type="submit" value="Volver">
+</form>

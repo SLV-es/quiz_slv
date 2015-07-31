@@ -1,10 +1,15 @@
 <% if (quizes.length) { %>
 	<table id="quizes">
+	<tr>
+	<th>Pregunta</th>
+	<th>Tema</th>
+	<th>Acciones</th>
+	</tr>
 	<% var i; for (i=0; i < quizes.length; i++) { %>
 		<tr>
 			<td><a href="quizes/<%= quizes[i].id %>"><%= quizes[i].pregunta %></a></td>
-			<td><a href="quizes/<%= quizes[i].id %>/edit"><button>Editar</button></a></td>
-			<td>
+			<td><%= quizes[i].tema[0].toUpperCase() + quizes[i].tema.substr(1); %></td>
+			<td><a href="quizes/<%= quizes[i].id %>/edit"><button>Editar</button></a>
 				<form method="post" action="quizes/<%= quizes[i].id %>?_method=delete">
 					<button type="submit" onClick="return confirm('Confirme eliminar la pregunta \'<%= quizes[i].pregunta %>\'');">Eliminar</button>
 				</form>

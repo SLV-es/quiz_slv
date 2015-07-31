@@ -23,6 +23,12 @@
 					}
 				}
 			}
+		},
+		tema: {
+			type: DataTypes.STRING, 
+			validate: { 
+				notEmpty: {msg: "-> Falta el tema"}
+			}
 		}
 	}
 	);
