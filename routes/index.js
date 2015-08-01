@@ -2,6 +2,7 @@
 var router = express.Router();
 
 var quizController = require('../controllers/quiz_controller');
+var commentController = require('../controllers/comment_controller');
 
 // Página de entrada (home page)
 router.get('/', function(req, res) {
@@ -24,5 +25,9 @@ router.get('/quizes/search',               quizController.search);
 
 // Definición de rutas de /author
 router.get('/author',                      quizController.author);
+
+// Definición de rutas de /quizes/comments
+router.get('/quizes/:quizId(\\d+)/comments/new', commentController.new);
+router.post('/quizes/:quizId(\\d+)/comments',    commentController.create);
 
 module.exports = router;

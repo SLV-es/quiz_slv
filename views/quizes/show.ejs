@@ -3,4 +3,9 @@
 	<input type="text" name="respuesta" value="Responda aquí"/>
 	<input type="submit" value="Enviar">
 </form>
+<p><a href="/quizes/<%= quiz.id %>/comments/new"><button>Nuevo comentario</button></a></p>
+<p><strong>Comentarios:</strong></p>
+<% for(i in quiz.Comments){ %>
+	<p id="comments"><%= quiz.Comments[i].texto %></p>
+<% } %>
 <% include _lista.ejs %>

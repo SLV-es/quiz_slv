@@ -1,0 +1,16 @@
+Añadir nuevo comentario: <p>
+
+<form method="post" action="/quizes/<%= quizid %>/comments">
+	<table id="quizes">
+	<tr>
+		<td>Pregunta:</td>
+		<td><%= quizpregunta %></td>
+	</tr>
+	<tr>
+		<td style="vertical-align:top;">Comentario:</td>
+		<td><textarea rows="4" cols="30" id="texto" name="comment[texto]" value="" required="true"/></textarea><p></td>
+	</tr>
+	</table>
+	<a href="/quizes/<%= quizid %>"><button type="button">Cancelar</button></a>	
+	<input type="submit" value="Enviar comentario">
+</form>
