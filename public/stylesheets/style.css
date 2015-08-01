@@ -31,3 +31,5 @@ nav a {padding: 0px; width:80%;}
 a:hover , button:hover, input[type=submit]:hover {font-weight:bolder;}
 
 #comments {border:1px solid navy; background-color: quartz; padding: 5px; margin: 5px auto; width: 60%;}
+
+.right {float: right;}
