@@ -1,5 +1,17 @@
 ﻿<form method="get" action="/quizes">
-	<p>Texto a buscar en la pregunta:</p>
+	<label for="search" class="rem">Texto a buscar en la pregunta:</label>
 	<input type="text" name="search" value="Escriba aquí"/>
 	<input type="submit" value="Buscar">
+</form>	
+<p>
+<form method="get" action="/quizes">
+	<label for="tema" class="rem">Filtrar preguntas por tema:</label>
+	<select name="tema">
+ 		 <option value="ciencia">Ciencia</option>
+ 		 <option value="humanidades">Humanidades</option>
+ 		 <option value="ocio">Ocio</option>
+ 		 <option value="tecnologia">Tecnología</option>
+  		 <option value="otro">Otro</option>
+	</select>
+	<input type="submit" value="buscar">
 </form>

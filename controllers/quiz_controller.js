@@ -22,6 +22,13 @@ exports.index = function(req, res) {
 			res.render('quizes/index.ejs', {quizes: quizes, errors: []});
 		}
 		).catch(function(error){next(error)});
+	} else if (req.query.tema) {
+		var tema = req.query.tema;
+		models.Quiz.findAll({where: {tema: tema}, order: "pregunta ASC"}).then(
+		function(quizes) {
+			res.render('quizes/index.ejs', {quizes: quizes, errors: []});
+		}
+		).catch(function(error){next(error)});		
 	} else {
 		models.Quiz.findAll( {order: "pregunta ASC"} ).then(
 		function(quizes) {
@@ -39,7 +46,7 @@ exports.show = function(req, res) {
 // GET /quizes/:id/answer
 exports.answer = function(req, res) {
 	var resultado = 'Incorrecto';
-	if (req.query.respuesta === req.quiz.respuesta) {resultado = 'Correcto';}
+	if (req.query.respuesta.toLowerCase() === req.quiz.respuesta.toLowerCase()) {resultado = 'Correcto';}
 	res.render('quizes/answer', {quiz: req.quiz, respuesta: resultado, errors: []});
 };
 
