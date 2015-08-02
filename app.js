@@ -41,6 +41,19 @@ app.use(function(req, res, next) {
 	next();
 });
 
+// MW autologout: limita el tiempo inactivo de sesion
+app.use(function(req, res, next){
+	if(req.session.user){
+		var now = (new Date()).getTime();
+		if (now > req.session.user.timeout ){ // si se ha superado el tiempo de inactividad
+			delete req.session.user;          //  termino sesión
+		} else {
+			req.session.user.timeout = now+req.session.user.downtime; // establezco nuevo tiempo límite
+		}
+	}
+	next();
+});
+
 app.use('/', routes);
 
 // catch 404 and forward to error handler
@@ -75,6 +88,5 @@ app.use(function(err, req, res, next) {
 	errors: []
   });
 });
-
 
 module.exports = app;
