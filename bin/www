@@ -7,6 +7,12 @@
 var app = require('../app');
 var debug = require('debug')('quiz_slv:server');
 var http = require('http');
+var fs = require('fs');
+var https = require('https');
+var options = {
+	key: fs.readFileSync('certs/quiz-slv-key.pem').toString(),
+	cert: fs.readFileSync('certs/quiz-slv-cert.pem').toString()
+};
 
 /**
  * Get port from environment and store in Express.
@@ -88,3 +94,8 @@ function onListening() {
     : 'port ' + addr.port;
   debug('Servidor Express escuchando en ' + bind);
 }
+
+var serverSecure = https.createServer(options,app);
+serverSecure.listen(8443, function(){
+	debug('Express server escuchando en puerto ' + server.address().port );
+});

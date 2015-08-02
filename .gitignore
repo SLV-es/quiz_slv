@@ -3,6 +3,7 @@ node_modules
 npm-debug.log
 quiz.sqlite
 .env
+crea_keys.cmd
 
 # Windows image file caches
 Thumbs.db
