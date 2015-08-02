@@ -18,7 +18,7 @@ h3 {font-size:160%}
 h4 {font-size:140%}
 h5 {font-size:120%}
 
-#quizes {border-collapse: collapse; margin: 0px auto; font-size: 1.2em}
+#quizes {border-collapse: collapse; margin: 0px auto; font-size: 1.2em; min-width:40%}
 #quizes th  {border: 1px solid #fafafa; background-color: #afafaf;}
 #quizes tr  {border-top: 1px solid rgb(175, 175, 175);border-bottom: 1px solid rgb(175, 175, 175);}
 #quizes td {text-align: left; vertical-align: baseline; padding: 5px;}
