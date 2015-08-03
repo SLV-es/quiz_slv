@@ -1,10 +1,10 @@
  // Definición del modelo de Quiz con validación
- 
+
  module.exports = function( sequelize, DataTypes ) {
 	return sequelize.define( 'Quiz',
 	{	pregunta:  {
-			type: DataTypes.STRING, 
-			validate: { 
+			type: DataTypes.STRING,
+			validate: {
 				notEmpty: {msg: "-> Falta la pregunta"} ,
 				esPregunta: function(value){
 					if(value==='Pregunta'){
@@ -14,8 +14,8 @@
 			}
 		},
 		respuesta: {
-			type: DataTypes.STRING, 
-			validate: { 
+			type: DataTypes.STRING,
+			validate: {
 				notEmpty: {msg: "-> Falta la respuesta"} ,
 				esRespuesta: function(value){
 					if(value==='Respuesta'){
@@ -25,8 +25,8 @@
 			}
 		},
 		tema: {
-			type: DataTypes.STRING, 
-			validate: { 
+			type: DataTypes.STRING,
+			validate: {
 				notEmpty: {msg: "-> Falta el tema"}
 			}
 		}

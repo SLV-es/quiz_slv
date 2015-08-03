@@ -1,9 +1,10 @@
-﻿var express = require('express');
+var express = require('express');
 var router = express.Router();
 
 var quizController = require('../controllers/quiz_controller');
 var commentController = require('../controllers/comment_controller');
 var sessionController = require('../controllers/session_controller');
+var statisticsController = require('../controllers/statistics_controller');
 
 // Página de entrada (home page)
 router.get('/', function(req, res) {
@@ -40,5 +41,8 @@ router.get('/quizes/:quizId(\\d+)/comments/:commentId(\\d+)/edit',    sessionCon
 router.put('/quizes/:quizId(\\d+)/comments/:commentId(\\d+)/update',  sessionController.loginRequired, commentController.update);
 router.put('/quizes/:quizId(\\d+)/comments/:commentId(\\d+)/publish', sessionController.loginRequired, commentController.publish);
 router.delete('/quizes/:quizId(\\d+)/comments/:commentId(\\d+)',      sessionController.loginRequired, commentController.destroy);
+
+// Definición de ruta para las estadísticas
+router.get('/quizes/statistics', statisticsController.obtainData, statisticsController.show);
 
 module.exports = router;

@@ -48,7 +48,7 @@ exports.publish = function(req, res){
 // DELETE /quizes/:quizId/comments/:commentId
 exports.destroy = function(req, res) {
 	req.comment.destroy()
-	.then( 
+	.then(
 		function(){ res.redirect('/quizes/'+req.params.quizId);} // Redirección HTTP (URL relativo) a la pregunta
 	).catch( function(error){next(error)});
 };
@@ -56,7 +56,7 @@ exports.destroy = function(req, res) {
 // GET /quizes/:quizId/comments/:commentId/edit
 exports.edit = function(req, res) {
 	var comment = req.comment; // autoload de instancia de comment
-	var quiz = req.quiz;        
+	var quiz = req.quiz;
 	res.render('comments/edit', {comment: comment, quiz: quiz, errors: []});
 };
 

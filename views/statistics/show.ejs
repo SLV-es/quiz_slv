@@ -1,0 +1,11 @@
+<h3>Estadísticas</h3>
+
+<table id="quizes">
+<tr><td>Preguntas:</td><td><%= statsData.quizes %></td><td><small></small></td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Sin comentarios:</td><td><%= statsData.commentedQuizes %></td><td><small>(<%= statsData.quizes?(statsData.commentedQuizes * 100 / statsData.quizes).toFixed(2)+'%':'-' %>)</small></td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Con comentarios:</td><td><%= statsData.unCommentedQuizes %></td><td><small>(<%= statsData.quizes?(statsData.unCommentedQuizes * 100 / statsData.quizes).toFixed(2)+'%':'-' %>)</small></td></tr>
+<tr><td>Comentarios totales:</td><td><%= statsData.comments %></td><td><small></small></td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Publicados:</td><td><%= statsData.publishedComments %></td><td><small>(<%= statsData.comments?(statsData.publishedComments * 100 / statsData.comments).toFixed(2)+'%':'-' %>)</small></td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;No publicados:</td><td><%= statsData.unPublishedComments %></td><td> <small>(<%= statsData.comments?(statsData.unPublishedComments * 100 / statsData.comments).toFixed(2)+'%':'-' %>)</small></td></tr>
+<tr><td>Media de comentarios por pregunta:</td><td><%= statsData.quizes?(statsData.comments / statsData.quizes).toFixed(2):'0.00' %></td><td><small></small></td></tr>
+</table>

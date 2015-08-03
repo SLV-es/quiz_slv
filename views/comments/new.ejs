@@ -1,4 +1,4 @@
-Añadir nuevo comentario: <p>
+<h3>Añadir nuevo comentario:</h3>
 
 <form method="post" action="/quizes/<%= quizid %>/comments">
 	<table id="quizes">
@@ -11,7 +11,7 @@ Añadir nuevo comentario: <p>
 		<td><textarea rows="4" cols="30" id="texto" name="comment[texto]" value="" required="true"/></textarea><p></td>
 	</tr>
 	</table>
-	<a href="/quizes/<%= quizid %>"><button type="button">Cancelar</button></a>	
+	<a href="/quizes/<%= quizid %>"><button type="button">Cancelar</button></a>
 	<input type="submit" value="Enviar comentario"><p>
 	<small>Los comentarios se publicarán tras ser aprobados por un administrador</small>
 </form>

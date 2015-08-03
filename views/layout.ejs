@@ -9,7 +9,7 @@
 		 href='/stylesheets/wide.css' />
 		<link rel='stylesheet' type='text/css'
 		 media='only screen and (max-width: 480px)'
-		 href='/stylesheets/smartphone.css' />		 
+		 href='/stylesheets/smartphone.css' />
 	</head>
 	<body>
 	<div id="page-wrap">
@@ -26,8 +26,9 @@
 			<span><a href="/quizes">Preguntas</a></span>
 			<% if(session.user){ %>
 				<span><a href="/quizes/new">Añadir</a></span>
-			<% } %>			
+			<% } %>
 			<span><a href="/quizes/search">Buscador</a></span>
+			<span><a href="/quizes/statistics">Estadísticas</a></span>
 		</nav>
 		<section class="main" id="s1">
 			<% if (errors.length) { %>
@@ -37,13 +38,13 @@
 				<span> <%= errors[i].message %> </span><br/>
 				<% } %>
 			</div>
-			<% } %>	
-			
+			<% } %>
+
 			<div><%- body %></div>
 		</section>
-		
+
 		<footer class="main" id="f1">
-			<a href="/author">Créditos</a>		
+			<a href="/author">Créditos</a>
 			<a href="https://github.com/SLV-es/quiz_slv">Este proyecto en GitHub</a>
 			<a href="http://es.wikipedia.org/wiki/Quiz">¿Qué es un Quiz?</a>
 		</footer>

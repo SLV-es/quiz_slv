@@ -20,7 +20,7 @@ exports.create = function(req, res) {
 	var password = req.body.password;
 	var downtime = 2*60*1000; // tiempo límite inactividad sesión: 2 minutos
 	var timeout = (new Date()).getTime()+downtime;
-	
+
 	var userController = require('./user_controller');
 	userController.autenticar(login,password,function(error,user){
 		if (error){ // si hay un error retornamos mensajes de error de sesión
@@ -28,7 +28,7 @@ exports.create = function(req, res) {
 			res.redirect("/login");
 			return;
 		}
-		
+
 		// si no hay error, crear req.session.user y guardar campos id y username
 		// la sesión se define por la existencia de req.session.user
 		// se define el límite de tiempo de sesión inactiva en 2 minutos
@@ -37,7 +37,7 @@ exports.create = function(req, res) {
 	});
 };
 
-// DELETE /logout 
+// DELETE /logout
 exports.destroy = function(req, res) {
     delete req.session.user;
     res.redirect(req.session.redir.toString());  // redirección al path anterior al login

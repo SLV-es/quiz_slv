@@ -31,7 +31,7 @@ exports.index = function(req, res) {
 		function(quizes) {
 			res.render('quizes/index.ejs', {quizes: quizes, errors: []});
 		}
-		).catch(function(error){next(error)});		
+		).catch(function(error){next(error)});
 	} else {
 		models.Quiz.findAll( {order: "pregunta ASC"} ).then(
 		function(quizes) {
@@ -86,7 +86,7 @@ exports.edit = function(req, res) {
 exports.update = function(req, res) {
 	req.quiz.pregunta  = req.body.quiz.pregunta;
 	req.quiz.respuesta = req.body.quiz.respuesta;
-	req.quiz.tema      = req.body.quiz.tema;	
+	req.quiz.tema      = req.body.quiz.tema;
 
 	req.quiz.validate().then(
 		function(err){
@@ -104,7 +104,7 @@ exports.update = function(req, res) {
 // DELETE /quizes/:id
 exports.destroy = function(req, res) {
 	req.quiz.destroy()
-	.then( 
+	.then(
 		function(){ res.redirect('/quizes');}  // Redirección HTTP (URL relativo) lista de preguntas
 	).catch( function(error){next(error)});
 };

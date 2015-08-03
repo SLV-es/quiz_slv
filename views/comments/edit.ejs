@@ -1,16 +1,16 @@
-Editar comentario: <p>
+<h3>Editar comentario:</h3>
 
 <form method="post" action="/quizes/<%= quiz.id %>/comments/<%= comment.id %>/update?_method=put">
 	<table id="quizes">
 	<tr>
 		<td style="vertical-align:top;">Pregunta:</td>
 		<td><%= quiz.pregunta %></td>
-	</tr>	
+	</tr>
 	<tr>
 		<td style="vertical-align:top;">Comentario:</td>
 		<td><textarea rows="4" cols="30" id="texto" name="comment[texto]" required="true"/><%= comment.texto %></textarea><p></td>
 	</tr>
 	</table>
-	<a href="/quizes/<%= quiz.id %>"><button type="button">Cancelar</button></a>	
+	<a href="/quizes/<%= quiz.id %>"><button type="button">Cancelar</button></a>
 	<input type="submit" value="Guardar cambios"><p>
 </form>
